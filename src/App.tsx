@@ -11,6 +11,7 @@ export default function App() {
   const [word, setWord] = useState<string>(
     words[Math.floor(Math.random() * words.length)]
   );
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
   console.log(word);
 
@@ -18,7 +19,7 @@ export default function App() {
     <main>
       <div className="result-text">You win! You lose! Try again</div>
       <HangmanDrawing />
-      <HangmanWord word={word} />
+      <HangmanWord word={word} guessedLetters={guessedLetters} />
       <Keyboard />
     </main>
   );
