@@ -23,10 +23,11 @@ main {
 /* INFO TEXT */
 
 .result-text {
-  margin: 2em;
+  margin: 0.5em auto 2em;
   font-size: 1.75rem; 
   font-weight: bold;
   text-shadow: 1px 1px 2px gray;
+  text-align: center;
 }
 
 /* DRAWING */
