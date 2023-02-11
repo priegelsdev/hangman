@@ -1,3 +1,5 @@
+// BODY PARTS to be drawn when letter is guessed incorrectly
+
 const HEAD = <div className="head"></div>;
 const BODY = <div className="body"></div>;
 const LEFT_ARM = <div className="arm-left"></div>;
@@ -15,7 +17,7 @@ export default function HangmanDrawing() {
       <div className="scaffold-beam-vert small"></div>
       <div className="scaffold-bottom"></div>
 
-      {BODY_PARTS}
+      {/*       {BODY_PARTS} */}
     </div>
   );
 }
