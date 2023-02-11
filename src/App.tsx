@@ -15,12 +15,19 @@ export default function App() {
 
   console.log(word);
 
+  function addGuessedLetter(e: Event) {
+    setGuessedLetters((prevLetters) => [
+      ...prevLetters,
+      e.target.innerText.toLowerCase(),
+    ]);
+  }
+
   return (
     <main>
       <div className="result-text">You win! You lose! Try again</div>
       <HangmanDrawing />
       <HangmanWord word={word} guessedLetters={guessedLetters} />
-      <Keyboard />
+      <Keyboard onClick={addGuessedLetter} />
     </main>
   );
 }

@@ -29,14 +29,16 @@ const ALPHABET_ARRAY = [
   'z',
 ];
 
-export default function Keyboard() {
+type KeyboardProps = {
+  onClick: (e: Event) => void;
+};
+
+export default function Keyboard({ onClick }: KeyboardProps) {
   const keys = ALPHABET_ARRAY.map((char, index) => (
-    <button className="key" key={index}>
+    <button className="key" key={index} onClick={onClick}>
       {char}
     </button>
   ));
-
-  console.log(keys);
 
   return <div className="keyboard-container">{keys}</div>;
 }

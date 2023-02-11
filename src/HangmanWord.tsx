@@ -10,7 +10,7 @@ export default function HangmanWord({
   const wordSplit = word.split('');
 
   const letters = word.split('').map((letter, index) => (
-    <span className="letter-blank">
+    <span key={index} className="letter-blank">
       <span
         key={index}
         style={{
@@ -22,8 +22,6 @@ export default function HangmanWord({
       </span>
     </span>
   ));
-
-  /*   wordSplit.forEach(letter => )  */
 
   return <div className="word">{letters}</div>;
 }
