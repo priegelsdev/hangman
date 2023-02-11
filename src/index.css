@@ -144,6 +144,10 @@ main {
   text-transform: uppercase;
 }
 
+.wrong {
+  color: red;
+}
+
 /* KEYBOARD */
 
 .keyboard-container {
@@ -170,10 +174,6 @@ main {
 
 .key:disabled:hover {
   background: none;
-}
-
-.guessed, .guessed:disabled:hover {
-  background: #fdfbe2;
 }
 
 .correct, .correct:disabled:hover {

@@ -14,8 +14,6 @@ export default function App() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [wrongGuesses, setWrongGuesses] = useState<number>(0);
 
-  console.log(word);
-
   // booleans to determine if game is won or lost and then affect displayed text on top of page
   const gameWon: boolean = word
     .split('')
@@ -45,7 +43,11 @@ export default function App() {
         {gameLost ? 'You lose! Refresh to try again.' : ''}
       </div>
       <HangmanDrawing wrongGuesses={wrongGuesses} />
-      <HangmanWord word={word} guessedLetters={guessedLetters} />
+      <HangmanWord
+        word={word}
+        guessedLetters={guessedLetters}
+        gameLost={gameLost}
+      />
       <Keyboard
         word={word}
         guessedLetters={guessedLetters}
