@@ -6,26 +6,36 @@ import Keyboard from './Keyboard';
 import words from './wordList.json';
 
 export default function App() {
-  // states for random word, guessedLetters
+  // states for random word, guessedLetters and the number of guesses
 
   const [word, setWord] = useState<string>(
     words[Math.floor(Math.random() * words.length)]
   );
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+  const [wrongGuesses, setWrongGuesses] = useState<number>(0);
 
   console.log(word);
 
+  // function to add guessed letter on btn click
+
   function addGuessedLetter(e: Event) {
-    setGuessedLetters((prevLetters) => [
-      ...prevLetters,
-      e.target.innerText.toLowerCase(),
-    ]);
+    const selectedLetter = e.target.innerText.toLowerCase();
+
+    // if letter has not been guessed yet, add it to array
+    if (!guessedLetters.includes(selectedLetter)) {
+      setGuessedLetters((prevLetters) => [...prevLetters, selectedLetter]);
+    }
+
+    // if letter is not in word to guess, increase wrongGuess count
+    if (!word.split('').includes(selectedLetter)) {
+      setWrongGuesses((prevGuesses) => (prevGuesses += 1));
+    }
   }
 
   return (
     <main>
       <div className="result-text">You win! You lose! Try again</div>
-      <HangmanDrawing />
+      <HangmanDrawing wrongGuesses={wrongGuesses} />
       <HangmanWord word={word} guessedLetters={guessedLetters} />
       <Keyboard onClick={addGuessedLetter} />
     </main>

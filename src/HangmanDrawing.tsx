@@ -9,7 +9,11 @@ const RIGHT_LEG = <div className="leg-right"></div>;
 
 const BODY_PARTS = [HEAD, BODY, LEFT_ARM, RIGHT_ARM, LEFT_LEG, RIGHT_LEG];
 
-export default function HangmanDrawing() {
+type HangmanDrawingProps = {
+  wrongGuesses: number;
+};
+
+export default function HangmanDrawing({ wrongGuesses }: HangmanDrawingProps) {
   return (
     <div className="drawing-container">
       <div className="scaffold-beam-hor"></div>
@@ -17,7 +21,8 @@ export default function HangmanDrawing() {
       <div className="scaffold-beam-vert small"></div>
       <div className="scaffold-bottom"></div>
 
-      {/*       {BODY_PARTS} */}
+      {/* shows body parts if wrongGuesses increases*/}
+      {BODY_PARTS.slice(0, wrongGuesses).map((part) => part)}
     </div>
   );
 }
