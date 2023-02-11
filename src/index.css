@@ -9,8 +9,108 @@ body {
 
 main {
   margin: 0 auto;
-  width: 800px;
+  min-width: 320px;
+  max-width: 800px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+/* 
+.result-text {
+  margin-bottom: auto;
+} */
+
+.drawing-container {
+  position: relative;
+}
+
+.drawing-container > * {
+  background: black;
+}
+
+.scaffold-bottom {
+  width: 170px;
+  height: 10px;
+  margin: 0 auto;
+}
+
+.scaffold-beam-vert {
+  width: 10px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.small {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  margin-left: 20px;
+}
+
+.scaffold-beam-hor {
+  width: 150px;
+  height: 10px;
+  margin-left: 140px;
+}
+
+.head {
+  position: absolute;
+  top: 50px;
+  right: -25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 7px solid black;
+  background: transparent;
+}
+
+.body {
+  position: absolute;
+  top: 110px;
+  right: 1px;
+  height: 80px;
+  width: 8px;
+}
+
+.arm-left {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  height: 75px;
+  width: 8px;
+  transform: rotate(-60deg);
+  transform-origin: bottom right
+}
+
+.arm-right {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  height: 75px;
+  width: 8px;
+  transform: rotate(60deg);
+  transform-origin: bottom left;
+}
+
+.leg-left {
+  position: absolute;
+  top: 185px;
+  right: 1px;
+  height: 85px;
+  width: 8px;
+  transform: rotate(30deg);
+  transform-origin: top right;
+}
+
+.leg-right {
+  position: absolute;
+  top: 185px;
+  right: 1px;
+  height: 85px;
+  width: 8px;
+  transform: rotate(-30deg);
+  transform-origin: top left;
 }
