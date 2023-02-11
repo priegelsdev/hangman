@@ -30,12 +30,35 @@ const ALPHABET_ARRAY = [
 ];
 
 type KeyboardProps = {
+  word: string;
+  guessedLetters: string[];
   onClick: (e: Event) => void;
+  gameWon: boolean;
+  gameLost: boolean;
 };
 
-export default function Keyboard({ onClick }: KeyboardProps) {
+export default function Keyboard({
+  word,
+  guessedLetters,
+  onClick,
+  gameWon,
+  gameLost,
+}: KeyboardProps) {
+  /*   const disabled = guessedLetters.includes(char) ? true : false; */
+
   const keys = ALPHABET_ARRAY.map((char, index) => (
-    <button className="key" key={index} onClick={onClick}>
+    <button
+      disabled={
+        guessedLetters.includes(char) ? true : false || gameWon || gameLost
+      }
+      className={`key ${guessedLetters.includes(char) ? 'guessed' : ''} ${
+        word.split('').includes(char) && guessedLetters.includes(char)
+          ? 'correct'
+          : ''
+      }`}
+      key={index}
+      onClick={onClick}
+    >
       {char}
     </button>
   ));

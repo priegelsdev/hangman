@@ -6,7 +6,7 @@ import Keyboard from './Keyboard';
 import words from './wordList.json';
 
 export default function App() {
-  // states for random word, guessedLetters and the number of guesses
+  // states for random word, guessedLetters, the number of guesses and game status
 
   const [word, setWord] = useState<string>(
     words[Math.floor(Math.random() * words.length)]
@@ -15,6 +15,12 @@ export default function App() {
   const [wrongGuesses, setWrongGuesses] = useState<number>(0);
 
   console.log(word);
+
+  // booleans to determine if game is won or lost and then affect displayed text on top of page
+  const gameWon: boolean = word
+    .split('')
+    .every((char) => guessedLetters.includes(char));
+  const gameLost: boolean = wrongGuesses === 6;
 
   // function to add guessed letter on btn click
 
@@ -34,10 +40,19 @@ export default function App() {
 
   return (
     <main>
-      <div className="result-text">You win! You lose! Try again</div>
+      <div className="result-text">
+        {gameWon ? `You win! Refresh to play again.` : ''}
+        {gameLost ? 'You lose! Refresh to try again.' : ''}
+      </div>
       <HangmanDrawing wrongGuesses={wrongGuesses} />
       <HangmanWord word={word} guessedLetters={guessedLetters} />
-      <Keyboard onClick={addGuessedLetter} />
+      <Keyboard
+        word={word}
+        guessedLetters={guessedLetters}
+        onClick={addGuessedLetter}
+        gameWon={gameWon}
+        gameLost={gameLost}
+      />
     </main>
   );
 }

@@ -26,7 +26,6 @@ main {
 .result-text {
   margin-bottom: 50px; 
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 /* DRAWING */
@@ -167,4 +166,17 @@ main {
 
 .key:hover, .key:focus {
   background: #fdfbe2;
+}
+
+.key:disabled:hover {
+  background: none;
+}
+
+.guessed, .guessed:disabled:hover {
+  background: #fdfbe2;
+}
+
+.correct, .correct:disabled:hover {
+  background: #fff774;
+  color: black;
 }
