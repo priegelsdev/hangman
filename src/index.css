@@ -123,4 +123,27 @@ main {
   transform-origin: top left;
 }
 
+/* HANGMAN WORD */
+
+.word {
+  margin: 1em;
+  display: flex;
+  gap: 10px;
+}
+
+.letter-blank {
+  border-bottom: 5px solid black;
+  width: 2rem;
+  text-align: center;
+}
+
+.letter {
+  visibility: hidden;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
 /* KEYBOARD */
