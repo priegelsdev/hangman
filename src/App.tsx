@@ -22,8 +22,9 @@ export default function App() {
 
   // function to add guessed letter on btn click
 
-  function addGuessedLetter(e: Event) {
-    const selectedLetter = e.target.innerText.toLowerCase();
+  function addGuessedLetter(e: React.MouseEvent<HTMLButtonElement>) {
+    const target = e.target as HTMLElement;
+    const selectedLetter = target.innerText.toLowerCase();
 
     // if letter has not been guessed yet, add it to array
     if (!guessedLetters.includes(selectedLetter)) {

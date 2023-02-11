@@ -32,7 +32,7 @@ const ALPHABET_ARRAY = [
 type KeyboardProps = {
   word: string;
   guessedLetters: string[];
-  onClick: (e: Event) => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   gameWon: boolean;
   gameLost: boolean;
 };
