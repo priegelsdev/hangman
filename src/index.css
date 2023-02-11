@@ -10,6 +10,7 @@ body {
 }
 
 main {
+  padding: 1.5em;
   margin: 0 auto;
   min-width: 320px;
   max-width: 800px;
@@ -144,6 +145,21 @@ main {
   text-transform: uppercase;
 }
 
-
-
 /* KEYBOARD */
+
+.keyboard-container {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(65px, 1fr));
+  gap: 0.5rem;
+}
+
+.key {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.75rem;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 1px solid black;
+}
