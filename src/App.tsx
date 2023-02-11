@@ -18,7 +18,7 @@ export default function App() {
     <main>
       <div className="result-text">You win! You lose! Try again</div>
       <HangmanDrawing />
-      <HangmanWord />
+      <HangmanWord word={word} />
       <Keyboard />
     </main>
   );
