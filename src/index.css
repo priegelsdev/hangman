@@ -24,8 +24,10 @@ main {
 /* INFO TEXT */
 
 .result-text {
-  margin-bottom: 50px; 
+  margin: 2em;
+  font-size: 1.75rem; 
   font-weight: bold;
+  text-shadow: 1px 1px 2px gray;
 }
 
 /* DRAWING */
@@ -126,7 +128,7 @@ main {
 /* HANGMAN WORD */
 
 .word {
-  margin: 1em;
+  margin-top: 2em;
   display: flex;
   gap: 10px;
 }
@@ -155,6 +157,7 @@ main {
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(65px, 1fr));
   gap: 0.5rem;
+  margin-top: 2em;
 }
 
 .key {
